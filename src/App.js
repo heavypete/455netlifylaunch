@@ -1,8 +1,6 @@
-// import links from "./data/links.json";
 import React, { useState, useEffect } from "react";
-import { feeds } from "react-dom/test-utils";
-import feeds from "./data/feeds/json";
-import "./App.css";
+import feeds from "./data/feeds.json";
+import "./App.scss";
 
 function App() {
   const [links, setLinks] = useState([]);
@@ -26,7 +24,8 @@ function App() {
             <li key={index}>
               <a target="_blank" href={link.url} rel="noreferrer">
                 {link.title}
-              </a>
+              </a>{" "}
+              - (from {link.origin})
             </li>
           );
         })}
